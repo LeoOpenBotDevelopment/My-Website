@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>AIlury</title>
+  <style>
+    body{
+      background-color: #100e28;
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+    }
+    html{
+      scroll-behavior: smooth;
+    }
+    .Start{
+      width: 100%;
+      height: 100vh;
+      background-image: linear-gradient(rgba(12, 3 , 51, 0.3), rgba(12, 3 , 51, 0.3));
+      position: relative;
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    nav{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 20px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav .logo{
+      width: 80px;
+      border-radius: 50%;
+    }
+    nav ul{
+      background-color: #171530;
+      padding: 20px;
+      border-radius: 20px;
+    }
+    nav ul li{
+      list-style: none;
+      display: inline-block;
+      margin-left: 40px;
+      transition: 1s;
+    }
+    
+    nav ul li a{
+      text-decoration: none;
+      color: #fff;
+      font-size: 17px;
+      transition: 1s;
+    }
+    nav ul li a:hover{
+      color: purple;
+    }
+    .content{
+      text-align: center;
+      background-color: #171530;
+      padding: 40px;
+      border-radius: 20px;
+    }
+    .content h1{
+      font-size: 160px;
+      color: #fff;
+      font-weight: 600;
+      transition: 1s;
+    }
+    .content h1:hover{
+      -webkit-text-stroke: 2px #fff;
+      color: transparent;
+    }
+    .content a{
+      text-decoration: none;
+      display: inline-block;
+      color: #fff;
+      font-size: 24px;
+      border: 2px solid #fff;
+      padding: 14px 70px;
+      border-radius: 50px;
+      margin-top: 20px;
+    }
+    .content a:hover{
+      background: white;
+      color: black;
+    }
+    .back-video{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    @media (min-aspect-ratio: 16/9){
+      .back-video{
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-aspect-ratio: 16/9){
+      .back-video{
+        width: auto;
+        height: 100%;
+      }
+    }
+    .content p{
+      color: #fff;
+    }
+    @media(max-width: 700px){
+      .content h1{
+        font-size: 60px;
+      }
+      .content p{
+        display: none;
+      }
+      nav .logo{
+        display: none;
+      }
+      nav ul li a{
+        font-size: 15px;
+      }
+    }
+    /*row*/
+    .HOME{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #100e28;
+      width: 100%;
+      height: 100%;
+    }
+    h1{
+      font-size: 36px;
+      font-weight: 600;
+      color: white;
+    }
+    p{
+      color: white;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+      padding: 10px;
+    }
+    .row{
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .row1{
+      flex-basis: 55%;
+      background: #171530;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+    .row1:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    }
+    .row2{
+      flex-basis: 40%;
+      background: #171530;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+    .row2:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    }
+    .bild{
+      height: 300px;
+    }
+    @media(max-width: 700px){
+      .row{
+        flex-direction: column;
+      }
+      .row1{
+        flex-basis: 100%;
+      }
+      .row2{
+        flex-basis: 100%;
+      }
+      .bild{
+        height: 170px;
+      }
+    }
+    .row11{
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .row22{
+      flex-basis: 55%;
+      background: #171530;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      transition: 0.5s;
+    }
+    .row22:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    }
+    .row33{
+      flex-basis: 40%;
+      width: 40%;
+      background: #171530;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      padding: 20px 12px;
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+    .row33:hover{
+      box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+    }
+    .bild2{
+      height: 300px;
+    }
+    @media(max-width: 700px){
+      .row11{
+        flex-direction: column;
+      }
+      .row22{
+        flex-basis: 100%;
+      }
+      .row33{
+        flex-basis: 100%;
+        width: 100%;
+      }
+      .bild2{
+        height: 170px;
+      }
+    }
+    #Hometext{
+      
+    }
+    /*/row*/
+    /*list*/
+    input[type=text]{
+      width: 85%;
+      padding: 12px 20px;
+      /*#030a1b*/
+      background-color: #100e28;
+      color: white;
+      text-align: center;
+      /*#363a48*/
+      border: 1px solid #171530;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      font-weight: bold;
+      font-size: 20px;
+      margin-left: 5px;
+      transition: 1s;
+    }
+    button{
+      width: 10%;
+      padding: 5px 5px;
+      /*#030a1b*/
+      background-color: #100e28;
+      color: white;
+      text-align: center;
+      /*#363a48*/
+      border: 1px solid #171530;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 5px;
+      height: 50px;
+      transition: 1s;
+    }
+    #savebtn{
+      width: 66%;
+      padding: 5px 5px;
+      background-color: #100e28;
+      color: white;
+      text-align: center;
+      border: 1px solid #171530;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 5px;
+      height: 50px;
+      transition: 1s;
+    }
+    #startbtn{
+      width: 18%;
+      padding: 5px 5px;
+      background-color: #100e28;
+      color: white;
+      text-align: center;
+      border: 1px solid #171530;
+      border-radius: 4px;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+      margin-top: 20px;
+      margin-left: 5px;
+      height: 50px;
+      transition: 1s;
+    }
+    #timeframe{
+      width: 55%;
+      padding: 12px 20px;
+      background-color: #100e28;
+      color: white;
+      text-align: center;
+      border: 1px solid #171530;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 1s;
+    }
+    #message{
+      margin-top: 20px;
+      text-align: center;
+      padding: 10px;
+      width: 55%;
+      background-color: rgba(255, 0, 0, 0.5);
+      color: rgba(255, 0, 0, 0.9);
+      border: 1px solid rgba(255, 0, 0, 0.8);
+      border-radius: 5px;
+      font-size: 15px;
+      display: none;
+    }
+    #message2{
+      padding: 10px;
+      text-align: center;
+      background-color: rgba(0, 255, 0, 0.5);
+      color: rgba(0, 255, 0, 0.9);
+      border: 1px solid rgba(0, 255, 0, 0.5);
+      border-radius: 5px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: none;
+    }
+    #messagebtn{
+      margin-top: 20px;
+      padding: 10px;
+      width: 20%;
+      background-color: rgba(255, 0, 0, 0.5);
+      color: rgba(255, 0, 0, 0.9);
+      border: 1px solid rgba(255, 0, 0, 0.8);
+      border-radius: 5px;
+      font-size: 15px;
+      display: none;
+    }
+    #messagebtn2{
+      margin-top: 20px;
+      padding: 10px;
+      width: 20%;
+      background-color: rgba(255, 0, 0, 0.5);
+      color: rgba(255, 0, 0, 0.9);
+      border: 1px solid rgba(255, 0, 0, 0.8);
+      border-radius: 5px;
+      font-size: 15px;
+      display: none;
+    }
+    #alertElement{
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+    #progres{
+      width: 800px;
+    }
+    #progresnumber{
+      width: 800px;
+    }
+    @media(max-width: 600px){
+      #progres{
+        width: 200px;
+      }
+      #progresnumber{
+        width: 200px;
+      }
+    }
+    #repeatbtn{
+      width: 30%;
+    }
+    /*/list*/
+    /*instruction*/
+    .INSTRUCTION{
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      padding-top: 50px;
+      /*171530*//*100e28*/
+      background-color: #100e28;
+      width: 100%;
+      height: 100%;
+    }
+    .INSTRUCTION-col{
+      background-color: #171530;
+      padding: 10% 15%;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+    }
+    .INSTRUCTION-col h3{
+      font-size: 44px;
+      margin: 20px 0 40px;
+      font-weight: 500;
+    }
+    .INSTRUCTION-col span{
+      font-size: 16px;
+    }
+    #alerts{
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .row22 h2{
+      color: white;
+      font-size: 30px;
+      font-weight: bold;
+    }
+    /*/instuction*/
+    /*<price>*/
+    .price-row{
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 25px;
+    }
+    .includes{
+      color: bkack;
+      font-family: Helvetica, sans-serif;
+      font-size: 22px;
+    }
+    .includesE{
+      color: #d59bf4;
+      font-size: 20px;
+      text-align: left;
+      margin-left: 20%;
+    }
+    .INSTRUCTION-col ul{
+      text-align: left;
+      margin: 20px 0;
+      color: #ddd;
+      list-style: none;
+    }
+    .INSTRUCTION-col ul li::before{
+      content: '\2022';
+      color: #100e28;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .includesE li{
+      margin: 15px 0;
+      font-family: Verdana, sans-serif;
+    }
+    .INSTRUCTION-col a{
+      text-decoration: none;
+      display: inline-block;
+      color: white;
+      font-size: 24px;
+      border: 2px solid #3672b5;
+      padding: 14px 70px;
+      border-radius: 50px;
+      margin-top: 20px;
+    }
+    .INSTRUCTION-col a:hover{
+      background: #3672b5;
+      color: white;
+    }
+    .INSTRUCTION-col a:active{
+      background: #100e28;
+      color: white;
+    }
+    .INSTRUCTION-col p{
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="Start">
+    <img src="BI3.png" class="back-video"></img>
+    <nav>
+      <img src="favicon.jpg" class="logo"></img>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Service">Service</a></li>
+        <li><a href="#Price">Price</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+      <h1>AIlury</h1>
+      <p>we help you organize, plan, build your website*s and more</p>
+      <a href="#Home">Explore</a>
+    </div>
+  </div>
+  <div id="alertElement">
+    <button id="message">text</button><button id="messagebtn">yes</button><button id="messagebtn2">no</button>
+  </div>
+  <div id="message2">text</div>
+  <section class="HOME">
+    <h1 id="Hometext"><a name="Home">HOME</a></h1>
+    <div class="row">
+      <div class="row1">
+        <img class="bild" src="AIluryLogo.png">
+      </div>
+      <div class="row2">
+        <p style="text-align: left;">Mein Service bietet individuelle Unterstützung bei der Strukturierung, Planung und Entwicklung Ihrer Webseite. Ich verstehe, wie wichtig eine starke Online-Präsenz ist, unabhängig von der Größe Ihres Unternehmens oder Ihrer persönlichen Marke. Als Einzelunternehmer arbeite ich eng mit Ihnen zusammen, um Ihre spezifischen Anforderungen zu verstehen und eine Webseite zu erstellen, die Ihre Einzigartigkeit und Ihre Ziele widerspiegelt. Mein Ziel ist es, Ihnen eine professionelle Präsenz im Web zu bieten und Ihnen dabei zu helfen, Ihre Online-Ziele effektiv zu erreichen.</p>
+      </div>
+    </div>
+    <div class="row11">
+      <div class="row33">
+        <button id="timeframe">0</button><button id="plusbtn">+</button><button id="minusbtn">-</button><button id="startbtn">start</button>
+        <button id="savebtn">save</button><button id="repeatbtn">Repeat</button>
+        <input type="text" id="Activityy" placeholder="Enter an Activity…"><button id="addActivity">+</button><br>
+      </div>
+      <div class="row22">
+        <h2>Alerted Text</h2>
+        <h3 id="alerts"></h3>
+      </div>
+    </div>
+  </section>
+  <section class="Service">
+    <h1 style="text-align: center;"><a name="Service">Service</a></h1>
+    <div class="row">
+      <div class="row1">
+        <img class="bild" src="Webbuildpic.png">
+      </div>
+      <div class="row2">
+        <p>Ich helfe dabei, coole Übergänge auf deiner Webseite einzubauen! Das macht den Besuchern Spaß und deine Seite wirkt moderner. Egal, ob du sanfte Übergänge zwischen Seiten oder verspielte Effekte für deine Bilder möchtest - ich bringe Schwung in deine Webseite!</p>
+      </div>
+    </div>
+    <div class="row11">
+      <div class="row33">
+        <p>Ich helfe dir dabei, deine Webseite zu organisieren und zu strukturieren. Damit wird alles übersichtlicher und deine Besucher finden leichter, was sie suchen. Von der Menüplanung bis zur Aufteilung der Inhalte - ich bringe Ordnung in dein Online-Zuhause!</p>
+      </div>
+      <div class="row22">
+        <img class="bild2" src="Webbuildplan.png">
+      </div>
+    </div>
+  </section>
+  <section class="INSTRUCTION">
+    <h1><a name="Price">website Prices</a></h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="price-row">
+      <div class="INSTRUCTION-col">
+        <p>one page</p>
+        <h3 class="price">$300 <span>/ one page</span></h3>
+        <h2 class="includes">get…</h3>
+        <ul class="includesE">
+          <li>resurch</li>
+          <li>plan</li>
+          <li>design</li>
+          <li>changes up to 69%</li>
+          <li>extensions: no</li>
+          <li>full remake: no</li>
+          <li>full recoloring: no</li>
+        </ul>
+        <a>contact</a>
+      </div>
+      <div class="INSTRUCTION-col">
+        <p>two pages</p>
+        <h3 class="price">$500 <span>/ two pages</span></h3>
+        <h2 class="includes">save $100</h3>
+        <ul class="includesE">
+          <li>resurch</li>
+          <li>plan</li>
+          <li>design</li>
+          <li>changes up to 90%</li>
+          <li>extensions: 1 page</li>
+          <li>full remake: 1 time</li>
+          <li>recoloring: 1 time</li>
+        </ul>
+        <a>contact</a>
+      </div>
+      <div class="INSTRUCTION-col">
+        <p>three pages</p>
+        <h3 class="price">$700 <span>/three pages</span></h3>
+        <h2 class="includes">save $200</h3>
+        <ul class="includesE">
+          <li>resurch</li>
+          <li>plan</li>
+          <li>design</li>
+          <li>changes up to 100%</li>
+          <li>extensions: 2 pages</li>
+          <li>full remake: 2 times</li>
+          <li>recoloring: 2 times</li>
+        </ul>
+        <a>contact</a>
+      </div>
+    </div>
+    <div class="newrow">
+      <p>Explain to your customers why they should choose your product over someone else's  product</p>
+    </div>
+  </section>
+  <script>
+    // Funktion zum Laden der gespeicherten Aktivitäten
+    function loadActivities() {
+        if(localStorage.getItem("activities")) {
+            const savedActivities = JSON.parse(localStorage.getItem("activities"));
+            savedActivities.forEach((activity, index) => {
+                const input = createInput(activity);
+                const row33 = document.querySelector(".row33");
+                const button = createButton();
+                row33.appendChild(input);
+                row33.appendChild(button);
+                attachRemoveListener(button, input);
+            });
+        }
+    }
+
+    // Funktion zum Erstellen eines Input-Felds
+    function createInput(value) {
+        const input = document.createElement("input");
+        input.placeholder = "Enter an Activity…";
+        input.type = "text";
+        input.value = value;
+        return input;
+    }
+
+    // Funktion zum Erstellen einer Schaltfläche
+    function createButton() {
+        const button = document.createElement("button");
+        button.textContent = "-";
+        return button;
+    }
+
+    // Funktion zum Hinzufügen eines Event-Listeners für das Entfernen einer Aktivität
+    function attachRemoveListener(button, input) {
+        button.addEventListener("click", () => {
+            input.remove();
+            button.remove();
+            updateLocalStorage();
+        });
+    }
+
+    // Funktion zum Aktualisieren des lokalen Speichers
+    function updateLocalStorage() {
+        const inputs = document.querySelectorAll("input[type='text']");
+        const activities = [];
+        inputs.forEach(input => {
+            if(input.value.trim() !== "") {
+                activities.push(input.value.trim());
+            }
+        });
+        localStorage.setItem("activities", JSON.stringify(activities));
+    }
+
+    // Event-Listener für das Hinzufügen einer Aktivität
+    const addActivity = document.getElementById("addActivity");
+    addActivity.addEventListener("click", () => {
+        const input = createInput("");
+        const button = createButton();
+        const row33 = document.querySelector(".row33");
+        row33.appendChild(input);
+        row33.appendChild(button);
+        attachRemoveListener(button, input);
+        updateLocalStorage(); // Aktualisiere den lokalen Speicher nach dem Hinzufügen einer Aktivität
+    });
+    // Funktion zum Zufälligen Auswählen einer Aufgabe aus der Liste der Textinhalte der Input-Elemente
+    window.onload = function() {
+        loadActivities();
+    };
+    const savebtn = document.getElementById("savebtn");
+    savebtn.addEventListener("click", saveE);
+    function saveE() {
+        updateLocalStorage();
+    }
+    function yesno() {
+        const message = document.getElementById("message");
+        const message2 = document.getElementById("message2");
+        const messagebtn = document.getElementById("messagebtn");
+        const messagebtn2 = document.getElementById("messagebtn2");
+        const alerts = document.getElementById("alerts");
+        message2.style.display = "none";
+        message.innerText = "All elements have been alerted. Do you want to Repeat?";
+        message.style.display = "block";
+        messagebtn.style.display = "block";
+        messagebtn2.style.display = "block";
+        messagebtn.addEventListener("click", () =>{
+          localStorage.removeItem("displayedContents");
+          messagebtn.style.display = "none";
+          messagebtn2.style.display = "none";
+          message.style.display = "none";
+          alerts.innerText = "";
+          updateLocalStorage();
+          showAlertWithRandomContent();
+        });
+        messagebtn2.addEventListener("click", () =>{
+          localStorage.removeItem("displayedContents");
+          messagebtn.style.display = "none";
+          messagebtn2.style.display = "none";
+          message.style.display = "none";
+          updateLocalStorage();
+        });
+    }
+    function showAlertWithRandomContent() {
+        const messagebtn = document.getElementById("messagebtn");
+        const messagebtn2 = document.getElementById("messagebtn2");
+        const message = document.getElementById("message");
+        const message2 = document.getElementById("message2");
+        const savedActivities = JSON.parse(localStorage.getItem("activities")) || [];
+        const alerts = document.getElementById("alerts");
+        const timeframeInput = document.getElementById("timeframe");
+        const timeframeInMinutes = parseInt(timeframeInput.textContent);
+        if (isNaN(timeframeInMinutes)) {
+            message.style.display = "block";
+            message2.style.display = "none";
+            message.innerText = "Bitte geben Sie eine gültige Zahl ein.";
+            return;
+        }
+
+        const timeframeInMilliseconds = timeframeInMinutes * 60000;
+        const timePerMessage = timeframeInMilliseconds / savedActivities.length;
+
+        let displayedContents = JSON.parse(localStorage.getItem("displayedContents")) || [];
+
+        const intervalID = setInterval(() => {
+            const remainingContents = savedActivities.filter(content => !displayedContents.includes(content));
+            if (remainingContents.length > 0) {
+                const randomIndex = Math.floor(Math.random() * remainingContents.length);
+                const randomContent = remainingContents[randomIndex];
+                messagebtn.style.display = "none";
+                messagebtn2.style.display = "none";
+                message.style.display = "none";
+                message2.style.display = "block";
+                message2.innerText = randomContent;
+                if (alerts.innerText == ""){
+                  alerts.innerText = randomContent;
+                }else{
+                  alerts.innerText = alerts.textContent + ", " + randomContent;
+                }
+
+                displayedContents.push(randomContent);
+                localStorage.setItem("displayedContents", JSON.stringify(displayedContents));
+            } else {
+                clearInterval(intervalID); // Stop the interval when all contents have been displayed
+                yesno(); // Ask the user if they want to repeat the process
+            }
+        }, timePerMessage);
+    }
+
+    // Event-Listener für das Aufrufen der showAlertWithRandomContent-Funktion nach dem Drücken der Enter-Taste im Input-Feld
+    const timeframeInput = document.getElementById("timeframe");
+    const startbtn = document.getElementById("startbtn");
+    const plusbtn = document.getElementById("plusbtn");
+    const minusbtn = document.getElementById("minusbtn");
+    const messagebtn = document.getElementById("messagebtn");
+    const messagebtn2 = document.getElementById("messagebtn2");
+    const message = document.getElementById("message");
+    const alerts = document.getElementById("alerts");
+
+    startbtn.addEventListener("click", function() {
+            localStorage.removeItem("displayedContents");
+            message.style.display = "none";
+            messagebtn.style.display = "none";
+            messagebtn2.style.display = "none";
+            alerts.innerText = "";
+            updateLocalStorage();
+            showAlertWithRandomContent();
+    });
+    plusbtn.addEventListener("click", function() {
+            const timeframe = document.getElementById("timeframe");
+            const timeframeInMinutes = parseInt(timeframe.textContent);
+            timeframe.textContent = timeframeInMinutes + 1;
+    });
+    minusbtn.addEventListener("click", function(){
+            const timeframe = document.getElementById("timeframe");
+            const timeframeInMinutes = parseInt(timeframe.textContent);
+            if (timeframeInMinutes > 0) {
+                timeframe.textContent = timeframeInMinutes - 1;
+            }
+    });
+    const repeatbtn = document.getElementById("repeatbtn");
+    repeatbtn.addEventListener("click", repeat)
+    function repeat() {
+      localStorage.removeItem("displayedContents");
+      message.style.display = "none";
+      messagebtn.style.display = "none";
+      messagebtn2.style.display = "none";
+      alerts.innerText = "";
+      updateLocalStorage();
+      showAlertWithRandomContent();
+    }
+
+  </script>
+</body>
+
+</html>
