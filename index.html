@@ -6,8 +6,37 @@
   <meta name="viewport" content="width=device-width">
   <title>AIlury</title>
   <style>
+    :root{
+      --1-color: #100e28;
+      --2-color: #3672b5;
+      --3-color: #d59bf4;
+      --4-color: #171530;
+      --5-color: #ddd;
+      --6-color: #fff;
+      --7-color: black;
+    }
+    .light-mode{
+      --1-color: lightgrey;
+      --2-color: black;
+      --3-color: black;
+      --4-color: grey;
+      --5-color: black;
+      --6-color: black;
+      --7-color: white;
+    }
     body{
-      background-color: #100e28;
+      background-color: var(--1-color);
+      animation: start 1s;
+    }
+    @keyframes start{
+      from{
+        width: 0px;
+        filter: blur(5px);
+      }
+      to{
+        width: 100%;
+        filter: blur(0px);
+      }
     }
     *{
       margin: 0;
@@ -43,7 +72,7 @@
       border-radius: 50%;
     }
     nav ul{
-      background-color: #171530;
+      background-color: var(--4-color);
       padding: 20px;
       border-radius: 20px;
     }
@@ -56,7 +85,7 @@
     
     nav ul li a{
       text-decoration: none;
-      color: #fff;
+      color: white;
       font-size: 17px;
       transition: 1s;
     }
@@ -65,33 +94,33 @@
     }
     .content{
       text-align: center;
-      background-color: #171530;
+      background-color: var(--4-color);
       padding: 40px;
       border-radius: 20px;
     }
     .content h1{
       font-size: 160px;
-      color: #fff;
+      color: white;
       font-weight: 600;
       transition: 1s;
     }
     .content h1:hover{
-      -webkit-text-stroke: 2px #fff;
+      -webkit-text-stroke: 2px white;
       color: transparent;
     }
     .content a{
       text-decoration: none;
       display: inline-block;
-      color: #fff;
+      color: white;
       font-size: 24px;
-      border: 2px solid #fff;
+      border: 2px solid white;
       padding: 14px 70px;
       border-radius: 50px;
       margin-top: 20px;
     }
     .content a:hover{
       background: white;
-      color: black;
+      color: white;
     }
     .back-video{
       position: absolute;
@@ -112,7 +141,7 @@
       }
     }
     .content p{
-      color: #fff;
+      color: var(--6-color);
     }
     @media(max-width: 700px){
       .content h1{
@@ -134,7 +163,7 @@
       margin: auto;
       text-align: center;
       padding-top: 100px;
-      background-color: #100e28;
+      background-color: var(--1-color);
       width: 100%;
       height: 100%;
     }
@@ -157,7 +186,7 @@
     }
     .row1{
       flex-basis: 55%;
-      background: #171530;
+      background: var(--4-color);
       border-radius: 10px;
       margin-bottom: 5%;
       padding: 20px 12px;
@@ -169,7 +198,7 @@
     }
     .row2{
       flex-basis: 40%;
-      background: #171530;
+      background: var(--4-color);
       border-radius: 10px;
       margin-bottom: 5%;
       padding: 20px 12px;
@@ -181,6 +210,7 @@
     }
     .bild{
       height: 300px;
+      border-radius: 10px;
     }
     @media(max-width: 700px){
       .row{
@@ -203,7 +233,7 @@
     }
     .row22{
       flex-basis: 55%;
-      background: #171530;
+      background: var(--4-color);
       border-radius: 10px;
       margin-bottom: 5%;
       padding: 20px 12px;
@@ -215,7 +245,7 @@
     .row33{
       flex-basis: 40%;
       width: 40%;
-      background: #171530;
+      background: var(--4-color);
       border-radius: 10px;
       margin-bottom: 5%;
       padding: 20px 12px;
@@ -227,6 +257,7 @@
     }
     .bild2{
       height: 300px;
+      border-radius: 10px;
     }
     @media(max-width: 700px){
       .row11{
@@ -252,11 +283,11 @@
       width: 85%;
       padding: 12px 20px;
       /*#030a1b*/
-      background-color: #100e28;
+      background-color: var(--1-color);
       color: white;
       text-align: center;
       /*#363a48*/
-      border: 1px solid #171530;
+      border: 1px solid var(--4-color);
       border-radius: 4px;
       box-sizing: border-box;
       margin-top: 6px;
@@ -269,11 +300,11 @@
       width: 10%;
       padding: 5px 5px;
       /*#030a1b*/
-      background-color: #100e28;
+      background-color: var(--1-color);
       color: white;
       text-align: center;
       /*#363a48*/
-      border: 1px solid #171530;
+      border: 1px solid var(--4-color);
       border-radius: 4px;
       box-sizing: border-box;
       text-align: center;
@@ -287,10 +318,10 @@
     #savebtn{
       width: 66%;
       padding: 5px 5px;
-      background-color: #100e28;
+      background-color: var(--1-color);
       color: white;
       text-align: center;
-      border: 1px solid #171530;
+      border: 1px solid var(--4-color);
       border-radius: 4px;
       box-sizing: border-box;
       text-align: center;
@@ -304,10 +335,10 @@
     #startbtn{
       width: 18%;
       padding: 5px 5px;
-      background-color: #100e28;
+      background-color: var(--1-color);
       color: white;
       text-align: center;
-      border: 1px solid #171530;
+      border: 1px solid var(--4-color);
       border-radius: 4px;
       box-sizing: border-box;
       text-align: center;
@@ -321,10 +352,10 @@
     #timeframe{
       width: 55%;
       padding: 12px 20px;
-      background-color: #100e28;
+      background-color: var(--1-color);
       color: white;
       text-align: center;
-      border: 1px solid #171530;
+      border: 1px solid var(--4-color);
       border-radius: 4px;
       box-sizing: border-box;
       margin-top: 6px;
@@ -412,15 +443,15 @@
       text-align: center;
       padding-top: 50px;
       /*171530*//*100e28*/
-      background-color: #100e28;
+      background-color: var(--1-color);
       width: 100%;
       height: 100%;
     }
     .INSTRUCTION-col{
-      background-color: #171530;
+      background-color: var(--4-color);
       padding: 10% 15%;
       border-radius: 10px;
-      color: #fff;
+      color: var(--6-color);
       text-align: center;
     }
     .INSTRUCTION-col h3{
@@ -457,7 +488,7 @@
       font-size: 22px;
     }
     .includesE{
-      color: #d59bf4;
+      color: var(--3-color);
       font-size: 20px;
       text-align: left;
       margin-left: 20%;
@@ -465,12 +496,12 @@
     .INSTRUCTION-col ul{
       text-align: left;
       margin: 20px 0;
-      color: #ddd;
+      color: var(--5-color);
       list-style: none;
     }
     .INSTRUCTION-col ul li::before{
       content: '\2022';
-      color: #100e28;
+      color: var(--1-color);
       font-weight: bold;
       margin-right: 8px;
     }
@@ -483,17 +514,17 @@
       display: inline-block;
       color: white;
       font-size: 24px;
-      border: 2px solid #3672b5;
+      border: 2px solid var(--2-color);
       padding: 14px 70px;
       border-radius: 50px;
       margin-top: 20px;
     }
     .INSTRUCTION-col a:hover{
-      background: #3672b5;
+      background: var(--2-color);
       color: white;
     }
     .INSTRUCTION-col a:active{
-      background: #100e28;
+      background: var(--1-color);
       color: white;
     }
     .INSTRUCTION-col p{
@@ -504,18 +535,18 @@
 
 <body>
   <div class="Start">
-    <img src="BI3.png" class="back-video"></img>
+    <img id="back-img" src="BI3.png" class="back-video"></img>
     <nav>
       <img src="favicon.jpg" class="logo"></img>
       <ul>
         <li><a href="#Home">Home</a></li>
         <li><a href="#Service">Service</a></li>
-        <li><a href="#Price">Preise</a></li>
+        <li><a href="#Price">Price</a></li>
       </ul>
     </nav>
     <div class="content">
       <h1>AIlury</h1>
-      <p>Wir helfen Ihnen bei der Organisation, Planung und Erstellung Ihrer Webseite*n</p>
+      <p>we help you organize, plan, build your website*s and more</p>
       <a href="#Home">Explore</a>
     </div>
   </div>
@@ -549,7 +580,7 @@
     <h1 style="text-align: center;"><a name="Service">Service</a></h1>
     <div class="row">
       <div class="row1">
-        <img class="bild" src="Webbuildpic.png">
+        <img class="bild" id="bild" src="Webbuildpic.png">
       </div>
       <div class="row2">
         <p>Ich helfe dabei, coole Übergänge auf deiner Webseite einzubauen! Das macht den Besuchern Spaß und deine Seite wirkt moderner. Egal, ob du sanfte Übergänge zwischen Seiten oder verspielte Effekte für deine Bilder möchtest - ich bringe Schwung in deine Webseite!</p>
@@ -565,60 +596,60 @@
     </div>
   </section>
   <section class="INSTRUCTION">
-    <h1><a name="Price">webseiten Preise</a></h1>
+    <h1><a name="Price">website Prices</a></h1>
     <br>
     <br>
     <br>
     <br>
     <div class="price-row">
       <div class="INSTRUCTION-col">
-        <p>eine seite</p>
-        <h3 class="price">€ 299 <span>/eine seite</span></h3>
-        <h2 class="includes">bekomme…</h3>
+        <p>one page</p>
+        <h3 class="price">$300 <span>/ one page</span></h3>
+        <h2 class="includes">get…</h3>
         <ul class="includesE">
-          <li>Recherche</li>
-          <li>planung</li>
+          <li>resurch</li>
+          <li>plan</li>
           <li>design</li>
-          <li>Änderungen: 69%</li>
-          <li>Erweiterungen: keine</li>
-          <li>Neuauflage: keine</li>
-          <li>Umfärben: kein</li>
+          <li>changes up to 69%</li>
+          <li>extensions: no</li>
+          <li>full remake: no</li>
+          <li>full recoloring: no</li>
         </ul>
         <a>contact</a>
       </div>
       <div class="INSTRUCTION-col">
-        <p>zwei seiten</p>
-        <h3 class="price">€ 499 <span>/zwei seiten</span></h3>
-        <h2 class="includes">spare € 100</h3>
+        <p>two pages</p>
+        <h3 class="price">$500 <span>/ two pages</span></h3>
+        <h2 class="includes">save $100</h3>
         <ul class="includesE">
-          <li>Recherche</li>
-          <li>planung</li>
+          <li>resurch</li>
+          <li>plan</li>
           <li>design</li>
-          <li>Änderungen: 90%</li>
-          <li>Erweiterung: 1</li>
-          <li>Neuauflage: 1 mal</li>
-          <li>Umfärben: 1 mal</li>
+          <li>changes up to 90%</li>
+          <li>extensions: 1 page</li>
+          <li>full remake: 1 time</li>
+          <li>recoloring: 1 time</li>
         </ul>
         <a>contact</a>
       </div>
       <div class="INSTRUCTION-col">
-        <p>drei seiten</p>
-        <h3 class="price">€ 699 <span>/drei seiten</span></h3>
-        <h2 class="includes">spare € 200</h3>
+        <p>three pages</p>
+        <h3 class="price">$700 <span>/three pages</span></h3>
+        <h2 class="includes">save $200</h3>
         <ul class="includesE">
-          <li>Recherche</li>
+          <li>resurch</li>
           <li>planung</li>
           <li>design</li>
-          <li>Änderungen: 100%</li>
-          <li>Erweiterungen: 2</li>
-          <li>Neuauflage: 2 mal</li>
-          <li>Umfärben: 2 mal</li>
+          <li>changes up to 100%</li>
+          <li>extensions: 2 pages</li>
+          <li>full remake: 2 times</li>
+          <li>recoloring: 2 times</li>
         </ul>
         <a>contact</a>
       </div>
     </div>
     <div class="newrow">
-      <p>Was wollen Sie auf Ihrer Website für Ihren Online-Erfolg?</p>
+      <p>What do you want on your website for your online success</p>
     </div>
   </section>
   <script>
@@ -810,7 +841,45 @@
       updateLocalStorage();
       showAlertWithRandomContent();
     }
+    function isDarkMode() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function change_mood(){
+        document.body.classList.toggle("light-mode");
+        if(document.body.classList.contains("light-mode")){
+            document.querySelector("body").style.filter = "grayscale(100%)"; // Korrektur von "greyscale" zu "grayscale"
+            document.querySelector(".back-video").src = "Back2-pic.png";
+            document.querySelector(".bild2").src = "Build2-pic.png";
+            document.getElementById("bild").src = "Build3-pic.png";
+            document.querySelector(".bild").src = "AIluryLogo2.png";
+        } else {
+            document.querySelector("body").style.filter = "grayscale(0%)"; // Korrektur von "greyscale" zu "grayscale"
+            document.querySelector(".back-video").style.display = "block";
+            document.querySelector(".back-video").src = "BI3.png";
+            document.querySelector(".bild2").src = "Webbuildplan.png";
+            document.getElementById("bild").src = "Webbuildpic.png";
+            document.querySelector(".bild").src = "AIluryLogo.png";
+        }
+    }
 
+    // Function to update the mode information
+    function updateModeInfo() {
+        if (isDarkMode()) {
+            change_mood()
+        }else {
+            change_mood()
+        }
+    }
+
+    // Call the function initially
+    updateModeInfo();
+
+    // Listen for changes in mode preference
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', updateModeInfo);
   </script>
 </body>
 
