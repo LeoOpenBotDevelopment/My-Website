@@ -595,6 +595,29 @@
       </div>
     </div>
   </section>
+  <section class="uploadimg" style="display: none;">
+    <h1 style="text-align: center;"><a name="upload">Passe an</a></h1>
+    <div class="row">
+      <div class="row1">
+        <input type="file" id="uploadInput2" accept="image/*" style="display: none;">
+        <label for="uploadInput2"><img id="bild5" src="" alt="Hochgeladenes Bild…"></label>
+      </div>
+      <div class="row2">
+        <input id="textInputFE2" type="text" placeholder="text hier…" style="display: none;"><button onclick="submitinput()" id="S" style="display: none;">S</button>
+        <p id="FE2" onclick="FE2F()">dein text…</p>
+      </div>
+    </div>
+    <div class="row11">
+      <div class="row33">
+        <input id="textInputFE" type="text" placeholder="text hier…" style="display: none;"><button onclick="submitinput2()" id="S2" style="display: none;">S</button>
+        <p id="FE" onclick="FEF()">dein text…</p>
+      </div>
+      <div class="row22">
+        <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+        <label for="uploadInput"><img id="bild4" src="" alt="Hochgeladenes Bild…"></label>
+      </div>
+    </div>
+  </section>
   <section class="INSTRUCTION">
     <h1><a name="Price">Webseiten Preise</a></h1>
     <br>
@@ -652,6 +675,72 @@
       <p>Was wünschen Sie sich von Ihrer Website für Ihren Online-Erfolg?</p>
     </div>
   </section>
+  <script>
+    const textInputFE = document.getElementById('textInputFE');
+    const textInputFE2 = document.getElementById('textInputFE2');
+    const FE = document.getElementById('FE');
+    const FE2 = document.getElementById('FE2');
+    const S = document.getElementById('S');
+    const S2 = document.getElementById('S2');
+    const uploadimg = document.querySelector('.uploadimg');
+    function showupload() {
+      uploadimg.style.display = "block";
+    }
+    function FEF() {
+      textInputFE.style.display = 'block';
+      textInputFE2.style.display = 'none';
+      S2.style.display = 'block';
+      S.style.display = 'none';
+    }
+    function FE2F() {
+      textInputFE.style.display = 'none';
+      textInputFE2.style.display = 'block';
+      S.style.display = 'block';
+      S2.style.display = 'none';
+    }
+    function submitinput2() {
+      FE.innerText = textInputFE.value;
+      textInputFE.style.display = 'none';
+      S2.style.display = 'none';
+    }
+
+    function submitinput() {
+      FE2.innerText = textInputFE2.value;
+      textInputFE2.style.display = 'none';
+      S.style.display = 'none';
+    }
+
+    document.getElementById('uploadInput').addEventListener('change', function() {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+            const imageDataURL = reader.result;
+            // Bild im Local Storage speichern
+            localStorage.setItem('uploadedImage', imageDataURL);
+            // Bild als Quelle für das Bild mit der ID "bild4" setzen
+            document.getElementById('bild4').src = imageDataURL;
+        };
+    });
+  </script>
+  <script>
+    document.getElementById('uploadInput2').addEventListener('change', function() {
+        const file = this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function() {
+            const imageDataURL = reader.result;
+            // Bild im Local Storage speichern
+            localStorage.setItem('uploadedImage', imageDataURL);
+            // Bild als Quelle für das Bild mit der ID "bild4" setzen
+            document.getElementById('bild5').src = imageDataURL;
+        };
+    });
+  </script>
   <script>
     // Funktion zum Laden der gespeicherten Aktivitäten
     function loadActivities() {
